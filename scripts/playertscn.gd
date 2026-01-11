@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 150.0
-const JUMP_VELOCITY = -300.0
+const JUMP_VELOCITY = -180.0
 
 var is_dead := false
 
@@ -26,16 +26,13 @@ func _physics_process(delta):
 	# Kill on any collision
 	if get_slide_collision_count() > 0:
 		die()
-
 func die():
 	if is_dead:
 		return
 
 	is_dead = true
-	print("dead")
-	# stop movement
-	
-	# wait 3 seconds
-	await get_tree().create_timer(3.0).timeout
+	set_physics_process(false)
 
-	get_tree().reload_current_scene()
+	await get_tree().create_timer(0.1).timeout
+
+	get_tree().change_scene_to_file("res://scenes/DeathScreen.tscn")

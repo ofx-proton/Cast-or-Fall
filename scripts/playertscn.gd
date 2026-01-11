@@ -36,3 +36,6 @@ func die():
 	await get_tree().create_timer(0.1).timeout
 
 	get_tree().change_scene_to_file("res://scenes/DeathScreen.tscn")
+	
+func _on_finish_pressed():
+	get_tree().change_scene_to_file("res://scenes/won.tscn")

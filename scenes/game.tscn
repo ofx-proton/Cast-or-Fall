@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b4160vb7wjm7a" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://d1hisiyon8iuy" path="res://sprites/brackeys_platformer_assets/sprites/world_tileset.png" id="4_iywne"]
 [ext_resource type="FontFile" uid="uid://070j17cvnqsb" path="res://sprites/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="4_lbhrr"]
+[ext_resource type="FontFile" uid="uid://dcv8yg17i02cn" path="res://sprites/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="5_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("4_iywne")
@@ -308,16 +309,13 @@ _data = {
 &"move": SubResource("Animation_p57ef")
 }
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbhrr"]
-normal = Vector2(-1, 0)
-
 [node name="game" type="Node2D"]
 position = Vector2(96, 56)
 
 [node name="Player" parent="." instance=ExtResource("1_uwrxv")]
 physics_interpolation_mode = 1
 z_index = 10
-position = Vector2(2952, -24)
+position = Vector2(-88, -40)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-29, -2)
@@ -354,7 +352,9 @@ offset_bottom = 16.0
 theme_override_fonts/font = ExtResource("4_lbhrr")
 theme_override_font_sizes/font_size = 8
 text = "Space to jump 
-jump immediately "
+jump immediately 
+use arrow to 
+move"
 
 [node name="platform2" parent="." instance=ExtResource("3_lnu2h")]
 position = Vector2(376.00003, -71.99999)
@@ -367,16 +367,24 @@ libraries = {
 autoplay = "move"
 
 [node name="Label2" type="Label" parent="."]
-offset_left = 2920.0
-offset_top = -40.0
-offset_right = 3276.0
+offset_left = 2720.0
+offset_top = -24.0
+offset_right = 3242.0
+offset_bottom = 16.0
 theme_override_fonts/font = ExtResource("4_lbhrr")
 theme_override_font_sizes/font_size = 16
-text = "Reach The Sun 
-to Finish Game"
+text = "Reach The Sun  and click
+to Finish Game
+Ttouching might cause death"
 
-[node name="WorldBoundary" type="Area2D" parent="." groups=["win"]]
+[node name="Button" type="Button" parent="Label2"]
+layout_mode = 0
+offset_left = 528.0
+offset_top = -64.0
+offset_right = 600.0
+offset_bottom = -48.0
+theme_override_fonts/font = ExtResource("5_iywne")
+theme_override_font_sizes/font_size = 8
+text = "Finish"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBoundary" groups=["safe"]]
-position = Vector2(3264, 0)
-shape = SubResource("WorldBoundaryShape2D_lbhrr")
+[connection signal="pressed" from="Label2/Button" to="Player" method="_on_finish_pressed"]

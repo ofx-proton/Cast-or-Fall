@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://owcl1qr24e"]
+
+[ext_resource type="AudioStream" uid="uid://tgcfgsntkge1" path="res://scenes/sprites/brackeys_platformer_assets/sounds/jump.wav" id="1_yu4ih"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_yu4ih")

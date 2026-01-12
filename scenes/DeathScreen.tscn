@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://d1c2egmd3nssa"]
 
 [ext_resource type="Script" uid="uid://bb0plcjkn4kxc" path="res://scenes/death_screen.gd" id="1_0r1s6"]
-[ext_resource type="FontFile" uid="uid://070j17cvnqsb" path="res://sprites/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_5034k"]
-[ext_resource type="FontFile" uid="uid://dcv8yg17i02cn" path="res://sprites/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_0r1s6"]
-[ext_resource type="Texture2D" uid="uid://d1hisiyon8iuy" path="res://sprites/brackeys_platformer_assets/sprites/world_tileset.png" id="4_rg777"]
+[ext_resource type="FontFile" uid="uid://070j17cvnqsb" path="res://scenes/sprites/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_5034k"]
+[ext_resource type="FontFile" uid="uid://dcv8yg17i02cn" path="res://scenes/sprites/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="2_0r1s6"]
+[ext_resource type="Texture2D" uid="uid://d1hisiyon8iuy" path="res://scenes/sprites/brackeys_platformer_assets/sprites/world_tileset.png" id="4_rg777"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rg777"]
 texture = ExtResource("4_rg777")

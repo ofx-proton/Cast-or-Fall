@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmwgj6cm65ynj"]
+
+[ext_resource type="AudioStream" uid="uid://c1r2ld33s6is7" path="res://scenes/sprites/brackeys_platformer_assets/sounds/hurt.wav" id="1_0hhgj"]
+
+[node name="Death" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_0hhgj")
